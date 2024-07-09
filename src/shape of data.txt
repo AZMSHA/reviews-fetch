@@ -1,0 +1,21 @@
+Link for All Google Reviews: https://www.google.com/maps/place/AZ+Movers/@55.9520767,-3.198934,14z/data=!4m8!1m2!2m1!1sAZ+Movers!3m4!1s0x48763f769df9fb97:0x298d0be3c019ce4f!8m2!3d55.9520767!4d-3.198934
+
+List of All Trust Pilot Reviews: "https://www.trustpilot.com/review/www.azmovers.co.uk",
+
+shape google-reviews {
+"author_image": PFP of the Author $unique;
+"review_id": Unique Review ID;
+"review_link": Link to the Original Review ;
+"author_title": Name of the Author;
+"review_text": Text of The review;
+"review_rating": Stars of the Review;
+}
+
+shape trust-pilot-reviews {
+"review_title": Title of the review $unique;
+"review_id": Unique Review ID;
+"review_link": Link to the Original Review (format: https://www.trustpilot.com/reviews/{review_id};
+"author_title": Name of the Author;
+"review_text": Text of The review;
+"review_rating": Stars of the Review;
+}
