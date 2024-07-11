@@ -31,8 +31,8 @@ export default function Review({
           {author_title}
         </a>
       </h4>
-      {review_title && <h6 className="review_title">{review_title}</h6>}
       <span className="review_rating">{ratingStars}</span>
+      {review_title && <h6 className="review_title">{review_title}</h6>}
       <p className="review_text">{review_text}</p>
     </article>
   );

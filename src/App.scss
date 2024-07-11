@@ -10,11 +10,21 @@ body {
   --theme-color: white;
   --font-color: black;
   --color-primary: #6e1113;
+  --trustpilot-green: #00b67a;
+  --trustpilot-gray: rgb(220, 220, 230);
+  --google-gold: rgb(253, 214, 99);
+  --google-dark-gray: #9AA0A6;
+  --google-light-gray:  #F1F3F4;
+  --google-yellow: #FBBC04;
+  --google-blue: #4285F4;
+  --google-red: #EA4335;
+  --google-green: #34A853;
+  --google-black: #202124;
+  --trustpilot-black: #1c1c1c;
   line-height: 1.2em;
   margin: 0;
   padding: 0;
   font-family: var(--font-family-text);
-  color: var(--font-color);
 
   ul,
   li,
@@ -35,50 +45,26 @@ body {
   }
 
   .google-review,
-  .trustpilot-review {
-    height: 15rem;
-    background-color: var(--theme-color);
-    border: 1px solid var(--color-primary);
-    outline: 1px solid transparent;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    backface-visibility: hidden;
-    padding: 1rem;
-    box-sizing: border-box;
-    transform: translateZ(0) perspective(1px);
+.trustpilot-review {
+  height: 15rem;
+  background-color: var(--theme-color);
+  outline: 1px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  padding: 1rem;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  transform: translateZ(0) perspective(1px);
 
     .review_rating {
       display: flex;
-      margin: 0.5rem 0px;
+      margin-bottom: 0.25rem;
       gap: 2px;
-    }
-
-    &:not(.google-review) .review_rating {
-      i {
-        color: white;
-
-        &.full {
-          background-color: #00b67a;
-        }
-
-        &.not-full {
-          background-color: rgb(220, 220, 230);
-        }
-      }
-    }
-
-    &:not(.trustpilot-review) .review_rating {
-      i.full {
-        color: rgb(253, 214, 99);
-      }
-
-      i.not-full {
-        color: rgb(128, 134, 139);
-      }
     }
 
     .review_title {
@@ -89,35 +75,131 @@ body {
     }
 
     .author_title a {
-      font-size: 16px;
+      font-size: 14px;
       text-decoration: none;
       font-weight: 700;
       color: var(--font-color);
       text-transform: capitalize;
     }
 
+    .author_title a:hover {
+      text-decoration: underline;
+    }
+
     .review_text {
       flex: auto;
       font-size: 14px;
       font-weight: 400;
+      padding-right: 0.2rem;
       overflow-y: auto;
-      //styles for scroller
+      cursor: default;
+    }
+  }
+}
 
+// Google specific
+ .google-review {
+  color: var(--google-black);
+  position: relative;
+  z-index: 1;
+  background-image: conic-gradient(
+    var(--google-red) 0deg,
+    var(--google-red) 90deg,
+    var(--google-blue) 90deg,
+    var(--google-blue) 180deg,
+    var(--google-green) 180deg,
+    var(--google-green) 270deg,
+    var(--google-yellow) 270deg
+  );
+
+  .review_rating   {
+    i.full {
+      color: var(--google-gold);
+    }
+
+    i.not-full {
+      color: var(--google-dark-gray);
+    }
+  }
+
+  .review_text {
+    //styles for scroller
+    /* For Firefox */
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: var(--google-dark-gray) transparent; /* Colors the thumb and track */
+
+    /* For Internet Explorer and Edge (legacy) */
+    scrollbar-face-color: var(--google-dark-gray);
+    scrollbar-track-color: transparent;
+
+    /* For WebKit Browsers */
+    &::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--google-dark-gray);
+      border-radius: 8px;
+      border: 3px solid transparent; /* To take the full width */
+      background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 8px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: 1px;
+    background-color: var(--theme-color);
+    border-radius: 8px;
+  }
+}
+
+
+
+
+//trust pilot specific
+.trustpilot-review {
+  color: var(--trustpilot-black);
+  border: 1px solid var(--trustpilot-green) !important;
+
+
+  .review_rating  {
+    i {
+      color: white;
+      padding: 3px 2.7px;
+      font-size: 13px;
+
+      &.full {
+        background-color: var(--trustpilot-green);
+      }
+
+      &.not-full {
+        background-color: var(--trustpilot-gray);
+      }
+    }
+  }
+
+    .review_text  {
+      font-size: 14px;
+      //styles for scroller
       /* For Firefox */
       scrollbar-width: thin; /* Makes the scrollbar thinner */
-      scrollbar-color: #6e1113 transparent; /* Colors the thumb and track */
-
+      scrollbar-color: var(--trustpilot-green) transparent; /* Colors the thumb and track */
       /* For Internet Explorer and Edge (legacy) */
-      scrollbar-face-color: #6e1113;
+      scrollbar-face-color: var(--trustpilot-green);
       scrollbar-track-color: transparent;
-
       /* For WebKit Browsers */
       &::-webkit-scrollbar {
         width: 12px;
         height: 12px;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: #6e1113;
+        background-color: var(--trustpilot-green);
         border-radius: 8px;
         border: 3px solid transparent; /* To take the full width */
         background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
@@ -126,10 +208,5 @@ body {
         background: transparent;
         border-radius: 8px;
       }
-      &::-webkit-scrollbar-corner,
-      &::-webkit-scrollbar-button {
-        display: none;
-      }
     }
-  }
 }

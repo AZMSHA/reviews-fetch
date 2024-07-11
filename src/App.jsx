@@ -27,8 +27,8 @@ function App() {
   });
   useEffect(() => {
     const fetchData = async () => {
-      const googleReviewsUrl = "/google-reviews.json";
-      const trustpilotReviewsUrl = "/trustpilot-reviews.json";
+      const googleReviewsUrl = "/wp-content/uploads/react_reviews/google-reviews.json";
+      const trustpilotReviewsUrl = "/wp-content/uploads/react_reviews/trustpilot-reviews.json";
 
       try {
         const [googleRes, trustpilotRes] = await Promise.all([
@@ -60,17 +60,17 @@ function App() {
             slidesPerView: 4,
             centeredSlides: true,
             loop: true,
-            autoplay: {
-              pauseOnMouseEnter: true,
-              delay: 1500,
-            },
+            // autoplay: {
+            //   pauseOnMouseEnter: true,
+            //   delay: 1500,
+            // },
             speed: 1000,
             effect: "coverflow",
             coverflowEffect: {
               modifier: 0.5,
               depth: 500,
               rotate: 45,
-              slideShadows: true,
+              slideShadows: false,
             },
           }}
           className="google-reviews-carousel"
@@ -95,10 +95,10 @@ function App() {
             slidesPerView: 4,
             centeredSlides: true,
             loop: true,
-            autoplay: {
-              pauseOnMouseEnter: true,
-              delay: 1500,
-            },
+            // autoplay: {
+            //   pauseOnMouseEnter: true,
+            //   delay: 1500,
+            // },
             speed: 1000,
             effect: "coverflow",
             coverflowEffect: {
