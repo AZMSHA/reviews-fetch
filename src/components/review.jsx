@@ -12,11 +12,11 @@ export default function Review({
   for (let ratingCount = 1; ratingCount <= 5; ratingCount++) {
     if (ratingCount <= review_rating) {
       ratingStars.push(
-        <i className="fa-sharp fa-solid fa-star-sharp full"></i>
+        <i key={ratingCount} className="fa-sharp fa-solid fa-star-sharp full"></i>
       );
     } else {
       ratingStars.push(
-        <i className="fa-sharp fa-solid fa-star-sharp not-full"></i>
+        <i key={ratingCount} className="fa-sharp fa-solid fa-star-sharp not-full"></i>
       );
     }
   }

@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
 }
 
-#react-root-container {
+#reviewsRootContainer {
   --font-family-primary: "Arial";
   --font-family-text: "Arial";
   --theme-color: white;
@@ -13,12 +13,12 @@ body {
   --trustpilot-green: #00b67a;
   --trustpilot-gray: rgb(220, 220, 230);
   --google-gold: rgb(253, 214, 99);
-  --google-dark-gray: #9AA0A6;
-  --google-light-gray: #F1F3F4;
-  --google-yellow: #FBBC04;
-  --google-blue: #4285F4;
-  --google-red: #EA4335;
-  --google-green: #34A853;
+  --google-dark-gray: #9aa0a6;
+  --google-light-gray: #f1f3f4;
+  --google-yellow: #fbbc04;
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-green: #34a853;
   --google-black: #202124;
   --trustpilot-black: #1c1c1c;
   line-height: 1.2em;
@@ -26,50 +26,54 @@ body {
   padding: 0;
   font-family: var(--font-family-text);
 }
-#react-root-container ul,
-#react-root-container li,
-#react-root-container menu,
-#react-root-container ol,
-#react-root-container p {
+#reviewsRootContainer ul,
+#reviewsRootContainer li,
+#reviewsRootContainer menu,
+#reviewsRootContainer ol,
+#reviewsRootContainer p {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-#react-root-container h1 {
+#reviewsRootContainer .swiper-wrapper {
+  padding: 0.5rem 0rem;
+}
+#reviewsRootContainer h1 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container h2 {
+#reviewsRootContainer h2 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container h3 {
+#reviewsRootContainer h3 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container h4 {
+#reviewsRootContainer h4 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container h5 {
+#reviewsRootContainer h5 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container h6 {
+#reviewsRootContainer h6 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#react-root-container .google-review,
-#react-root-container .trustpilot-review {
+#reviewsRootContainer .google-review,
+#reviewsRootContainer .trustpilot-review {
   height: 15rem;
   background-color: var(--theme-color);
   outline: 1px solid transparent;
+  box-shadow: 0px 0px 15px -7px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -82,33 +86,33 @@ body {
   box-sizing: border-box;
   transform: translateZ(0) perspective(1px);
 }
-#react-root-container .google-review .review_rating,
-#react-root-container .trustpilot-review .review_rating {
+#reviewsRootContainer .google-review .review_rating,
+#reviewsRootContainer .trustpilot-review .review_rating {
   display: flex;
   margin-bottom: 0.25rem;
   gap: 2px;
 }
-#react-root-container .google-review .review_title,
-#react-root-container .trustpilot-review .review_title {
+#reviewsRootContainer .google-review .review_title,
+#reviewsRootContainer .trustpilot-review .review_title {
   font-size: 14px;
   color: var(--font-color);
   font-weight: 700;
   text-transform: capitalize;
 }
-#react-root-container .google-review .author_title a,
-#react-root-container .trustpilot-review .author_title a {
+#reviewsRootContainer .google-review .author_title a,
+#reviewsRootContainer .trustpilot-review .author_title a {
   font-size: 14px;
   text-decoration: none;
   font-weight: 700;
   color: var(--font-color);
   text-transform: capitalize;
 }
-#react-root-container .google-review .author_title a:hover,
-#react-root-container .trustpilot-review .author_title a:hover {
+#reviewsRootContainer .google-review .author_title a:hover,
+#reviewsRootContainer .trustpilot-review .author_title a:hover {
   text-decoration: underline;
 }
-#react-root-container .google-review .review_text,
-#react-root-container .trustpilot-review .review_text {
+#reviewsRootContainer .google-review .review_text,
+#reviewsRootContainer .trustpilot-review .review_text {
   flex: auto;
   font-size: 14px;
   font-weight: 400;
@@ -116,20 +120,20 @@ body {
   overflow-y: auto;
   cursor: default;
 }
-
-.google-review {
+#reviewsRootContainer .google-review {
   color: var(--google-black);
   position: relative;
+  overflow: hidden;
   z-index: 1;
   background-image: conic-gradient(var(--google-red) 0deg, var(--google-red) 90deg, var(--google-blue) 90deg, var(--google-blue) 180deg, var(--google-green) 180deg, var(--google-green) 270deg, var(--google-yellow) 270deg);
 }
-.google-review .review_rating i.full {
+#reviewsRootContainer .google-review .review_rating i.full {
   color: var(--google-gold);
 }
-.google-review .review_rating i.not-full {
+#reviewsRootContainer .google-review .review_rating i.not-full {
   color: var(--google-dark-gray);
 }
-.google-review .review_text {
+#reviewsRootContainer .google-review .review_text {
   /* For Firefox */
   scrollbar-width: thin; /* Makes the scrollbar thinner */
   scrollbar-color: var(--google-dark-gray) transparent; /* Colors the thumb and track */
@@ -138,21 +142,21 @@ body {
   scrollbar-track-color: transparent;
   /* For WebKit Browsers */
 }
-.google-review .review_text::-webkit-scrollbar {
+#reviewsRootContainer .google-review .review_text::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
-.google-review .review_text::-webkit-scrollbar-thumb {
+#reviewsRootContainer .google-review .review_text::-webkit-scrollbar-thumb {
   background-color: var(--google-dark-gray);
   border-radius: 8px;
   border: 3px solid transparent; /* To take the full width */
   background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
 }
-.google-review .review_text::-webkit-scrollbar-track {
+#reviewsRootContainer .google-review .review_text::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 8px;
 }
-.google-review::after {
+#reviewsRootContainer .google-review::after {
   position: absolute;
   z-index: -1;
   content: "";
@@ -160,23 +164,22 @@ body {
   background-color: var(--theme-color);
   border-radius: 8px;
 }
-
-.trustpilot-review {
+#reviewsRootContainer .trustpilot-review {
   color: var(--trustpilot-black);
   border: 1px solid var(--trustpilot-green) !important;
 }
-.trustpilot-review .review_rating i {
+#reviewsRootContainer .trustpilot-review .review_rating i {
   color: white;
   padding: 3px 2.7px;
   font-size: 13px;
 }
-.trustpilot-review .review_rating i.full {
+#reviewsRootContainer .trustpilot-review .review_rating i.full {
   background-color: var(--trustpilot-green);
 }
-.trustpilot-review .review_rating i.not-full {
+#reviewsRootContainer .trustpilot-review .review_rating i.not-full {
   background-color: var(--trustpilot-gray);
 }
-.trustpilot-review .review_text {
+#reviewsRootContainer .trustpilot-review .review_text {
   font-size: 14px;
   /* For Firefox */
   scrollbar-width: thin; /* Makes the scrollbar thinner */
@@ -186,17 +189,17 @@ body {
   scrollbar-track-color: transparent;
   /* For WebKit Browsers */
 }
-.trustpilot-review .review_text::-webkit-scrollbar {
+#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
-.trustpilot-review .review_text::-webkit-scrollbar-thumb {
+#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar-thumb {
   background-color: var(--trustpilot-green);
   border-radius: 8px;
   border: 3px solid transparent; /* To take the full width */
   background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
 }
-.trustpilot-review .review_text::-webkit-scrollbar-track {
+#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 8px;
 }

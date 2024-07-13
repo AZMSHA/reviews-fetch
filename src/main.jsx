@@ -1,9 +1,17 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import GoogleReviews from "./GoogleReviews.jsx";
+import TrustpilotReviews from "./TrustpilotReviews.jsx";
+import "./App.scss";
 
-ReactDOM.createRoot(document.getElementById("react-root-container")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElements = {
+  google: document.getElementById("googleReviewsContainer"),
+  trustpilot: document.getElementById("trustpilotReviewsContainer"),
+};
+
+const roots = {
+  google: ReactDOM.createRoot(rootElements.google),
+  trustpilot: ReactDOM.createRoot(rootElements.trustpilot),
+};
+
+roots.google.render(<GoogleReviews />);
+roots.trustpilot.render(<TrustpilotReviews />);
