@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import Carousel from "./components/Carousel";
-import Review from "./components/Review";
+import { useState, useEffect, useRef } from "react";
+import Carousel from "./Carousel";
+import Review from "./Review";
 
-function App() {
+function TrustpilotReviews() {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -23,37 +23,38 @@ function App() {
     fetchData();
   }, []);
 
+  const options = useRef({
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      pauseOnMouseEnter: true,
+      delay: 1500,
+    },
+    speed: 1000,
+    effect: "coverflow",
+    coverflowEffect: {
+      modifier: 0.5,
+      depth: 500,
+      rotate: 45,
+      scale: 0.85,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      575: { slidesPerView: 2 },
+    },
+  });
+
   return (
-    //should remove the outer container wrapper as im already using e-con on the wordpress site and wont need bootstrap
     <>
       {reviews.length === 0 ? null : (
         <Carousel
-          options={{
-            slidesPerView: 1,
-            centeredSlides: true,
-            loop: true,
-            autoplay: {
-              pauseOnMouseEnter: true,
-              delay: 1500,
-            },
-            speed: 1000,
-            effect: "coverflow",
-            coverflowEffect: {
-              modifier: 0.5,
-              depth: 500,
-              rotate: 45,
-              slideShadows: false,
-            },
-            breakpoints: {
-              1024: {
-                slidesPerView: 4,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              575: { slidesPerView: 2 },
-            },
-          }}
+          options={options.current}
           className="trustpilot-reviews-carousel"
         >
           {reviews.map((review) => {
@@ -74,4 +75,4 @@ function App() {
   );
 }
 
-export default App;
+export default TrustpilotReviews;
