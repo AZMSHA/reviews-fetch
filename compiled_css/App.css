@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
 }
 
-#reviewsRootContainer {
+#reviews-root-container {
   --font-family-primary: "Arial";
   --font-family-text: "Arial";
   --theme-color: white;
@@ -26,54 +26,64 @@ body {
   padding: 0;
   font-family: var(--font-family-text);
 }
-#reviewsRootContainer ul,
-#reviewsRootContainer li,
-#reviewsRootContainer menu,
-#reviewsRootContainer ol,
-#reviewsRootContainer p {
+#reviews-root-container ul,
+#reviews-root-container li,
+#reviews-root-container menu,
+#reviews-root-container ol,
+#reviews-root-container p {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-#reviewsRootContainer .swiper-wrapper {
+#reviews-root-container .swiper-wrapper {
   padding: 0.5rem 0rem;
 }
-#reviewsRootContainer h1 {
+#reviews-root-container .swiper-wrapper .swiper-slide {
+  border-radius: 8px;
+}
+#reviews-root-container .swiper-wrapper .swiper-slide-shadow-right {
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+#reviews-root-container .swiper-wrapper .swiper-slide-shadow-left {
+  border-radius: 8px;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+#reviews-root-container h1 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer h2 {
+#reviews-root-container h2 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer h3 {
+#reviews-root-container h3 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer h4 {
+#reviews-root-container h4 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer h5 {
+#reviews-root-container h5 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer h6 {
+#reviews-root-container h6 {
   line-height: 1.1em;
   margin: 0px;
   padding: 0px;
 }
-#reviewsRootContainer .google-review,
-#reviewsRootContainer .trustpilot-review {
+#reviews-root-container .google-review,
+#reviews-root-container .trustpilot-review {
   height: 15rem;
   background-color: var(--theme-color);
   outline: 1px solid transparent;
-  box-shadow: 0px 0px 15px -7px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -85,34 +95,35 @@ body {
   gap: 0.25rem;
   box-sizing: border-box;
   transform: translateZ(0) perspective(1px);
+  transition: box-shadow 900ms linear;
 }
-#reviewsRootContainer .google-review .review_rating,
-#reviewsRootContainer .trustpilot-review .review_rating {
+#reviews-root-container .google-review .review_rating,
+#reviews-root-container .trustpilot-review .review_rating {
   display: flex;
   margin-bottom: 0.25rem;
   gap: 2px;
 }
-#reviewsRootContainer .google-review .review_title,
-#reviewsRootContainer .trustpilot-review .review_title {
+#reviews-root-container .google-review .review_title,
+#reviews-root-container .trustpilot-review .review_title {
   font-size: 14px;
   color: var(--font-color);
   font-weight: 700;
   text-transform: capitalize;
 }
-#reviewsRootContainer .google-review .author_title a,
-#reviewsRootContainer .trustpilot-review .author_title a {
+#reviews-root-container .google-review .author_title a,
+#reviews-root-container .trustpilot-review .author_title a {
   font-size: 14px;
   text-decoration: none;
   font-weight: 700;
   color: var(--font-color);
   text-transform: capitalize;
 }
-#reviewsRootContainer .google-review .author_title a:hover,
-#reviewsRootContainer .trustpilot-review .author_title a:hover {
+#reviews-root-container .google-review .author_title a:hover,
+#reviews-root-container .trustpilot-review .author_title a:hover {
   text-decoration: underline;
 }
-#reviewsRootContainer .google-review .review_text,
-#reviewsRootContainer .trustpilot-review .review_text {
+#reviews-root-container .google-review .review_text,
+#reviews-root-container .trustpilot-review .review_text {
   flex: auto;
   font-size: 14px;
   font-weight: 400;
@@ -120,20 +131,20 @@ body {
   overflow-y: auto;
   cursor: default;
 }
-#reviewsRootContainer .google-review {
+#reviews-root-container .google-review {
   color: var(--google-black);
   position: relative;
   overflow: hidden;
   z-index: 1;
   background-image: conic-gradient(var(--google-red) 0deg, var(--google-red) 90deg, var(--google-blue) 90deg, var(--google-blue) 180deg, var(--google-green) 180deg, var(--google-green) 270deg, var(--google-yellow) 270deg);
 }
-#reviewsRootContainer .google-review .review_rating i.full {
+#reviews-root-container .google-review .review_rating i.full {
   color: var(--google-gold);
 }
-#reviewsRootContainer .google-review .review_rating i.not-full {
+#reviews-root-container .google-review .review_rating i.not-full {
   color: var(--google-dark-gray);
 }
-#reviewsRootContainer .google-review .review_text {
+#reviews-root-container .google-review .review_text {
   /* For Firefox */
   scrollbar-width: thin; /* Makes the scrollbar thinner */
   scrollbar-color: var(--google-dark-gray) transparent; /* Colors the thumb and track */
@@ -142,21 +153,21 @@ body {
   scrollbar-track-color: transparent;
   /* For WebKit Browsers */
 }
-#reviewsRootContainer .google-review .review_text::-webkit-scrollbar {
+#reviews-root-container .google-review .review_text::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
-#reviewsRootContainer .google-review .review_text::-webkit-scrollbar-thumb {
+#reviews-root-container .google-review .review_text::-webkit-scrollbar-thumb {
   background-color: var(--google-dark-gray);
   border-radius: 8px;
   border: 3px solid transparent; /* To take the full width */
   background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
 }
-#reviewsRootContainer .google-review .review_text::-webkit-scrollbar-track {
+#reviews-root-container .google-review .review_text::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 8px;
 }
-#reviewsRootContainer .google-review::after {
+#reviews-root-container .google-review::after {
   position: absolute;
   z-index: -1;
   content: "";
@@ -164,22 +175,26 @@ body {
   background-color: var(--theme-color);
   border-radius: 8px;
 }
-#reviewsRootContainer .trustpilot-review {
+#reviews-root-container .swiper-slide-active .google-review,
+#reviews-root-container .swiper-slide-active .trustpilot-review {
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.5);
+}
+#reviews-root-container .trustpilot-review {
   color: var(--trustpilot-black);
   border: 1px solid var(--trustpilot-green) !important;
 }
-#reviewsRootContainer .trustpilot-review .review_rating i {
+#reviews-root-container .trustpilot-review .review_rating i {
   color: white;
   padding: 3px 2.7px;
   font-size: 13px;
 }
-#reviewsRootContainer .trustpilot-review .review_rating i.full {
+#reviews-root-container .trustpilot-review .review_rating i.full {
   background-color: var(--trustpilot-green);
 }
-#reviewsRootContainer .trustpilot-review .review_rating i.not-full {
+#reviews-root-container .trustpilot-review .review_rating i.not-full {
   background-color: var(--trustpilot-gray);
 }
-#reviewsRootContainer .trustpilot-review .review_text {
+#reviews-root-container .trustpilot-review .review_text {
   font-size: 14px;
   /* For Firefox */
   scrollbar-width: thin; /* Makes the scrollbar thinner */
@@ -189,17 +204,17 @@ body {
   scrollbar-track-color: transparent;
   /* For WebKit Browsers */
 }
-#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar {
+#reviews-root-container .trustpilot-review .review_text::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
-#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar-thumb {
+#reviews-root-container .trustpilot-review .review_text::-webkit-scrollbar-thumb {
   background-color: var(--trustpilot-green);
   border-radius: 8px;
   border: 3px solid transparent; /* To take the full width */
   background-clip: padding-box; /* To ensure the border doesn't affect the thumb size */
 }
-#reviewsRootContainer .trustpilot-review .review_text::-webkit-scrollbar-track {
+#reviews-root-container .trustpilot-review .review_text::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 8px;
 }

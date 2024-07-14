@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Swiper from "swiper/bundle";
-import "swiper/css/bundle";
 
 export default function Carousel({ children, options, className }) {
   useEffect(() => {
