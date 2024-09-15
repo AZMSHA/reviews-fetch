@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import React from "react";
+import AZReviews from "./components/AZReviews.jsx";
+import "./az_reviews.css";
 
-ReactDOM.createRoot(document.getElementById("reviews-root-container")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("az-reviews-container")).render(
+  <div className="az-reviews-container">
+    <AZReviews />
+  </div>
 );

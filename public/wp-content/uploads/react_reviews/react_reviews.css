@@ -1,0 +1,270 @@
+#reviews-root-container {
+  --font-family-primary: "Arial";
+  --font-family-text: "Arial";
+  --theme-color: white;
+  --font-color: black;
+  --color-primary: #6e1113;
+  --trustpilot-green: #00b67a;
+  --trustpilot-gray: rgb(220, 220, 230);
+  --trustpilot-black: #1c1c1c;
+  --google-gold: rgb(253, 214, 99);
+  --google-dark-gray: #9aa0a6;
+  --google-light-gray: #f1f3f4;
+  --google-yellow: #fbbc04;
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-green: #34a853;
+  --google-black: #202124;
+  --az-brown: #6e1113;
+  --az-brown-light: #bb0003;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-text);
+}
+
+#reviews-root-container .swiper-wrapper {
+  padding: 0.5rem 0rem;
+}
+#reviews-root-container .swiper-wrapper .swiper-slide {
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  #reviews-root-container .swiper-wrapper .swiper-slide {
+    padding: 0rem 0.25rem;
+  }
+}
+
+#reviews-root-container .swiper-wrapper .swiper-slide-shadow-right {
+  border-radius: 8px;
+  background-image: -webkit-linear-gradient(
+    left,
+    #0000004d,
+    #0000
+  ); /* 786 - WebKit prefix */
+  background-image: -moz-linear-gradient(
+    left,
+    #0000004d,
+    #0000
+  ); /* 786 - Mozilla prefix */
+  background-image: -o-linear-gradient(
+    left,
+    #0000004d,
+    #0000
+  ); /* 786 - Opera prefix */
+  background-image: linear-gradient(
+    to right,
+    #0000004d,
+    #0000
+  ); /* 786 - Standard syntax */
+  will-change: background-image;
+}
+
+#reviews-root-container .swiper-wrapper .swiper-slide-shadow-left {
+  border-radius: 8px;
+  background-image: -webkit-linear-gradient(
+    right,
+    #0000004d,
+    #0000
+  ); /* 786 - WebKit prefix */
+  background-image: -moz-linear-gradient(
+    right,
+    #0000004d,
+    #0000
+  ); /* 786 - Mozilla prefix */
+  background-image: -o-linear-gradient(
+    right,
+    #0000004d,
+    #0000
+  ); /* 786 - Opera prefix */
+  background-image: linear-gradient(
+    to left,
+    #0000004d,
+    #0000
+  ); /* 786 - Standard syntax */
+  will-change: background-image;
+}
+
+#reviews-root-container .swiper-slide-active [class$="-review"] {
+  box-shadow: 0 0 10px -5px #00000080;
+}
+
+#reviews-root-container h1,
+#reviews-root-container h2,
+#reviews-root-container h3,
+#reviews-root-container h4,
+#reviews-root-container h5,
+#reviews-root-container h6,
+#reviews-root-container p {
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+
+#reviews-root-container [class$="-review"] {
+  height: 15rem;
+  background-color: var(--theme-color);
+  outline: 1px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: subpixel-antialiased; /* 786 - WebKit prefix */
+  -moz-osx-font-smoothing: grayscale; /* 786 - Mozilla prefix */
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  padding: 1rem;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  transform: translateZ(0) perspective(1px);
+  transition: box-shadow 0.9s linear;
+  will-change: transform, box-shadow;
+}
+
+#reviews-root-container [class$="-review"] .review_rating {
+  display: flex;
+  margin-bottom: 0.25rem;
+  gap: 2px;
+}
+
+#reviews-root-container [class$="-review"] .review-link a {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--font-color);
+  text-transform: capitalize;
+}
+
+#reviews-root-container [class$="-review"] .review-link a:hover {
+  text-decoration: underline;
+}
+
+#reviews-root-container [class$="-review"] .review_text {
+  flex: auto;
+  font-size: 14px;
+  font-weight: 400;
+  padding-right: 0.2rem;
+  overflow-y: auto;
+  cursor: default;
+}
+
+#reviews-root-container .google-review {
+  color: var(--google-black);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-image: -webkit-conic-gradient(
+    var(--google-red) 0deg,
+    var(--google-red) 90deg,
+    var(--google-blue) 90deg,
+    var(--google-blue) 180deg,
+    var(--google-green) 180deg,
+    var(--google-green) 270deg,
+    var(--google-yellow) 270deg
+  ); /* 786 - WebKit prefix */
+  background-image: conic-gradient(
+    var(--google-red) 0deg,
+    var(--google-red) 90deg,
+    var(--google-blue) 90deg,
+    var(--google-blue) 180deg,
+    var(--google-green) 180deg,
+    var(--google-green) 270deg,
+    var(--google-yellow) 270deg
+  ); /* 786 - Standard syntax */
+  will-change: background-image;
+}
+
+#reviews-root-container .google-review:after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background-color: var(--theme-color);
+  border-radius: 8px;
+}
+
+#reviews-root-container .trustpilot-review {
+  color: var(--trustpilot-black);
+  border: 1px solid var(--trustpilot-green) !important;
+}
+
+#reviews-root-container .az-review {
+  color: var(--trustpilot-black);
+  border: 1px solid var(--az-brown) !important;
+}
+
+#reviews-root-container .google-review .review_rating i.full,
+#reviews-root-container .az-review .review_rating i.full {
+  color: var(--google-gold);
+}
+
+#reviews-root-container .google-review .review_rating i.not-full,
+#reviews-root-container .az-review .review_rating i.not-full {
+  color: var(--google-dark-gray);
+}
+
+#reviews-root-container .trustpilot-review .review_rating i {
+  color: #fff;
+  padding: 3px 2.7px;
+  font-size: 13px;
+}
+
+#reviews-root-container .trustpilot-review .review_rating i.full {
+  background-color: var(--trustpilot-green);
+}
+#reviews-root-container .trustpilot-review .review_rating i.not-full {
+  background-color: var(--trustpilot-gray);
+}
+
+#reviews-root-container [class$="-review"] .review_text {
+  scrollbar-width: thin;
+}
+
+#reviews-root-container .az-review .review_text {
+  scrollbar-color: var(--az-brown) transparent;
+}
+
+#reviews-root-container .google-review .review_text {
+  scrollbar-color: var(--google-dark-gray) transparent;
+}
+
+#reviews-root-container .trustpilot-review .review_text {
+  scrollbar-color: var(--trustpilot-green) transparent;
+}
+
+#reviews-root-container [class$="-review"] .review_text::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#reviews-root-container
+  [class$="-review"]
+  .review_text::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+#reviews-root-container .az-review .review_text::-webkit-scrollbar-thumb {
+  background-color: var(--az-brown);
+}
+
+#reviews-root-container .google-review .review_text::-webkit-scrollbar-thumb {
+  background-color: var(--google-dark-gray);
+}
+
+#reviews-root-container
+  .trustpilot-review
+  .review_text::-webkit-scrollbar-thumb {
+  background-color: var(--trustpilot-green);
+}
+
+#reviews-root-container
+  [class$="-review"]
+  .review_text::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
